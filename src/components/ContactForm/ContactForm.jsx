@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -10,7 +10,7 @@ import {
   UserIcon,
   UserPhone,
 } from './ContactForm.styled';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const ContactShema = Yup.object().shape({
   name: Yup.string()
