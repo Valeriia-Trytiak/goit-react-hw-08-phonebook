@@ -21,7 +21,7 @@ const ContactShema = Yup.object().shape({
       "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
     )
     .required('This is a required field'),
-  phone: Yup.string()
+  number: Yup.string()
     .trim()
     .matches(
       /^\+?\d{1,4}?[ .\-s]?(\(\d{1,3}?\))?([ .\-s]?\d{1,4}){1,4}$/,
@@ -42,13 +42,13 @@ export const ContactForm = () => {
       alert(`${values.name} is already in contacts.`);
     } else {
       dispatch(addContact(values));
-      actions.resetForm({ name: '', phone: '' });
+      actions.resetForm({ name: '', number: '' });
     }
   };
 
   return (
     <Formik
-      initialValues={{ name: '', phone: '' }}
+      initialValues={{ name: '', number: '' }}
       onSubmit={(values, actions) => {
         handleSubmit(values, actions);
       }}
@@ -63,9 +63,9 @@ export const ContactForm = () => {
         </label>
         <label>
           Number
-          <StyledInput name="phone" type="tel" />
+          <StyledInput name="number" type="tel" />
           <UserPhone />
-          <Error name="phone" component="span" />
+          <Error name="number" component="span" />
         </label>
         <AddContactButton type="submit">Add contact</AddContactButton>
       </StyledForm>
