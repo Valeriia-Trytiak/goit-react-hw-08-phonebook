@@ -8,8 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 
 }
 
@@ -27,10 +26,9 @@ margin: 0;
 h1 {
   margin: 0;
   text-align: center;
-  background-color: #08AEEA;
-background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+}
 
+p {
+  margin: 0;
 }
 `;

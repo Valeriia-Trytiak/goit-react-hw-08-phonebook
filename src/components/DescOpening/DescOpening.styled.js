@@ -19,8 +19,16 @@ export const ButtonAddContact = styled.button`
   cursor: pointer;
 
   &:hover,
-  &:activ {
-    transform: translate(0, -3px);
-    box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
+  &:active,
+  &:focus {
+    color: white;
+    background-image: linear-gradient(
+      to right,
+      #02aab0 0%,
+      #00cdac 51%,
+      #02aab0 100%
+    );
+    border-color: ${p => p.theme.colors.accent};
+    box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
   }
 `;

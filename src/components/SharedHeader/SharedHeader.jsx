@@ -4,7 +4,8 @@ import { useAuth } from 'hooks/useAuth';
 import { Navigation } from '../Navigation/Navigation';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { AuthNav } from '../AuthNav/AuthNav';
-import { Container, Header } from './SharedHeader.styled';
+import { Header } from './SharedHeader.styled';
+import { Container } from 'components/Container/Container.styled';
 
 export const SharedHeader = () => {
   const { isLoggedIn } = useAuth();

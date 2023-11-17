@@ -1,23 +1,27 @@
-import Animation from 'lotties/Lottie';
+import { Animation } from 'lotties/Lottie';
 import { useAuth } from 'hooks/useAuth';
-import { DescHome } from '../components/Container/Container.styled';
+import {
+  TaglineText,
+  PageTitle,
+  DescPageHomeText,
+} from '../components/HomePage.styled';
 import { DescOpening } from 'components/DescOpening/DescOpening';
 
 export default function Home() {
   const { isLoggedIn } = useAuth();
   return (
     <div>
-      <h1>Hello, this is your PhoneBook.</h1>
-      <Animation />
+      <PageTitle>Hello, this is your PhoneBook.</PageTitle>
       {isLoggedIn ? (
         <DescOpening />
       ) : (
-        <p>
+        <DescPageHomeText>
           Create your own unique account and get the opportunity to record your
           contacts.
-        </p>
+        </DescPageHomeText>
       )}
-      <DescHome>Fast, Secure and Mobile Friendly React Application</DescHome>
+      <Animation />
+      <TaglineText>Fast, Secure and Friendly React Application</TaglineText>
     </div>
   );
 }

@@ -3,10 +3,14 @@ import { Form, ErrorMessage, Field } from 'formik';
 
 export const StyledForm = styled(Form)`
   position: relative;
-  max-width: 400px;
+  width: 250px;
   margin: ${p => p.theme.spacing(10)} auto 0;
   background: ${p => p.theme.colors.accent};
   border-radius: ${p => p.theme.spacing(8)};
+
+  @media only screen and (min-width: 768px) {
+    width: 400px;
+  }
 `;
 
 export const StyledInput = styled(Field)`

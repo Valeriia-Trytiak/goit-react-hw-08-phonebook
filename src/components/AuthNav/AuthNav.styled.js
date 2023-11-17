@@ -10,6 +10,13 @@ export const Link = styled(NavLink)`
 
   &.active {
     color: white;
-    background-color: ${p => p.theme.colors.accent};
+    background-image: linear-gradient(
+      to right,
+      #02aab0 0%,
+      #00cdac 51%,
+      #02aab0 100%
+    );
+    border-color: ${p => p.theme.colors.accent};
+    box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
   }
 `;
