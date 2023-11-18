@@ -16,7 +16,8 @@ export const GlobalStyle = createGlobalStyle`
     rgb(151, 217, 225) 50%,
     rgb(255, 255, 255) 100%
   );
-
+  
+  background-size: 100%;
 
 }
 

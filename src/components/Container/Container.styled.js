@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin: 0 auto;
 
   @media (min-width: 320px) {
-    width: 700px;
+    /* max-width: 700px; */
     padding: ${p => p.theme.spacing(2)};
   }
 
