@@ -3,11 +3,12 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   gap: ${p => p.theme.spacing(1)};
-  align-items: center;
+  flex-direction: column;
 
   @media only screen and (min-width: 768px) {
     gap: ${p => p.theme.spacing(4)};
     align-items: baseline;
+    flex-direction: row;
   }
 `;
 export const UserName = styled.p`
@@ -17,8 +18,8 @@ export const UserName = styled.p`
 export const ButtonLogOut = styled.button`
   text-decoration: none;
   display: inline-block;
-  width: 100px;
-  height: 35px;
+  width: 70px;
+  height: 30px;
   border-radius: ${p => p.theme.spacing(2)};
   font-family: inherit;
   font-size: 11px;
@@ -43,5 +44,10 @@ export const ButtonLogOut = styled.button`
       #00cdac 51%,
       #02aab0 100%
     );
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 100px;
+    height: 35px;
   }
 `;

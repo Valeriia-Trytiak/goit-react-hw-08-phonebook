@@ -12,6 +12,7 @@ export const Container = styled.div`
 export const SearchField = styled.input`
   position: relative;
   font-size: 16px;
+  width: 100%;
   padding: ${p => p.theme.spacing(2)} ${p => p.theme.spacing(1)}
     ${p => p.theme.spacing(2)} ${p => p.theme.spacing(5)};
   border: 2px solid ${p => p.theme.colors.accent};
@@ -26,6 +27,11 @@ export const SearchField = styled.input`
     top: 40px;
     left: 4px;
     color: ${p => p.theme.colors.grey};
+
+    @media only screen and (min-width: 320px) and (max-width: 332px) {
+      top: 60px;
+      left: 4px;
+    }
   }
 
   &:focus,
@@ -35,5 +41,9 @@ export const SearchField = styled.input`
 
   &:focus + svg {
     color: ${p => p.theme.colors.accent};
+  }
+
+  @media (min-width: 768px) {
+    width: 75%;
   }
 `;

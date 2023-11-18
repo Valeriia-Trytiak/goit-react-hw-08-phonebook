@@ -4,6 +4,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   gap: ${p => p.theme.spacing(3)};
   padding: ${p => p.theme.spacing(2)} 0;
   margin-bottom: ${p => p.theme.spacing(10)};
@@ -11,6 +12,10 @@ export const Header = styled.header`
 
   > nav {
     display: flex;
-    gap: ${p => p.theme.spacing(4)};
+    gap: ${p => p.theme.spacing(2)};
+
+    @media only screen and (min-width: 768px) {
+      gap: ${p => p.theme.spacing(4)};
+    }
   }
 `;

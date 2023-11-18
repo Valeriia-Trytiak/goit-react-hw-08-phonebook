@@ -3,7 +3,7 @@ import { getRandomHexColor } from '../utilits/RandomColor';
 
 export const ContactItem = styled.li`
   display: flex;
-  gap: ${p => p.theme.spacing(6)};
+  gap: ${p => p.theme.spacing(3)};
   align-items: center;
   width: 100%;
   padding: ${p => p.theme.spacing(2)} ${p => p.theme.spacing(5)};
@@ -21,6 +21,10 @@ export const ContactItem = styled.li`
     border-left: 10px solid transparent;
     cursor: pointer;
   }
+
+  @media (min-width: 768px) {
+    gap: ${p => p.theme.spacing(6)};
+  }
 `;
 
 export const User = styled.span`
@@ -28,6 +32,30 @@ export const User = styled.span`
 `;
 
 export const DeleteContact = styled.button`
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  & :hover,
+  & :focus {
+    box-shadow: 0 1px 2px 0 rgb(26 115 232 / 45%),
+      0 1px 3px 1px rgb(26 115 232 / 30%);
+  }
+  > svg {
+    color: ${p => p.theme.colors.grey};
+  }
+
+  &:hover > svg,
+  &:focus > svg {
+    color: ${p => p.theme.colors.accent};
+  }
+`;
+
+export const UpdateContact = styled.button`
   display: inline-block;
   text-decoration: none;
   outline: none;
