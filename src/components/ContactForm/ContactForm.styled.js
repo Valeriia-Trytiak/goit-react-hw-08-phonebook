@@ -8,6 +8,7 @@ export const StyledForm = styled(Form)`
   flex-direction: column;
   gap: ${p => p.theme.spacing(5)};
   max-width: 50%;
+  margin-bottom: ${p => p.theme.spacing(5)};
 `;
 
 export const Error = styled(ErrorMessage)`
@@ -33,6 +34,7 @@ export const StyledInput = styled(Field)`
   outline: none;
   border-radius: ${p => p.theme.spacing(2)};
   transition: background-color 0.2s;
+  background: transparent;
 
   &:focus,
   :hover {
@@ -58,12 +60,18 @@ export const AddContactButton = styled.button`
   transition: 0.3s;
   cursor: pointer;
 
-  &:focus,
-  &:hover {
-    background-color: ${p => p.theme.colors.accent};
-    box-shadow: 0 15px 20px rgba(0, 128, 128, 0.4);
+  &:hover,
+  &:active,
+  &:focus {
     color: white;
-    transform: translateY(-7px);
+    transform: translate(0, -3px);
+    box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
+    background-image: linear-gradient(
+      to right,
+      #02aab0 0%,
+      #00cdac 51%,
+      #02aab0 100%
+    );
   }
 `;
 

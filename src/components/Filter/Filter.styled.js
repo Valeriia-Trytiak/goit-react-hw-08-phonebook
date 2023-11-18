@@ -19,6 +19,7 @@ export const SearchField = styled.input`
   color: ${p => p.theme.colors.grey};
   border-radius: ${p => p.theme.spacing(2)};
   transition: background-color 0.2s;
+  background: transparent;
 
   + svg {
     position: absolute;

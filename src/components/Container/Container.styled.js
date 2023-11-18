@@ -5,14 +5,6 @@ export const Container = styled.div`
   max-width: 428px;
   padding: 0 ${p => p.theme.spacing(4)};
   margin: 0 auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(
-    0deg,
-    rgb(217, 175, 217) 0%,
-    rgb(151, 217, 225) 50%,
-    rgb(255, 255, 255) 100%
-  );
 
   @media (min-width: 320px) {
     width: 700px;

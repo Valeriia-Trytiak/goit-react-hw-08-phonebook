@@ -13,10 +13,6 @@ export const DescPageHomeText = styled.p`
 `;
 
 export const TaglineText = styled.p`
-  position: absolute;
-  top: 90%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%);
   text-align: center;
-  /* margin-top: ${p => p.theme.spacing(100)}; */
+  margin-top: 90%;
 `;

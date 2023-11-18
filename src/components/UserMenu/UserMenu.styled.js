@@ -1,11 +1,25 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  display: flex;
+  gap: ${p => p.theme.spacing(1)};
+  align-items: center;
+
+  @media only screen and (min-width: 768px) {
+    gap: ${p => p.theme.spacing(4)};
+    align-items: baseline;
+  }
+`;
+export const UserName = styled.p`
+  font-weight: 600;
+`;
+
 export const ButtonLogOut = styled.button`
   text-decoration: none;
   display: inline-block;
   width: 100px;
-  height: 40px;
-  border-radius: ${p => p.theme.spacing(5)};
+  height: 35px;
+  border-radius: ${p => p.theme.spacing(2)};
   font-family: inherit;
   font-size: 11px;
   text-transform: uppercase;

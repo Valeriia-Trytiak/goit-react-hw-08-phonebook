@@ -94,7 +94,11 @@ export const LeftDecoration = styled.div`
     width: 50px;
     height: 20px;
     border-radius: ${p => p.theme.spacing(8)};
-    background: white;
+    background-image: linear-gradient(
+      0deg,
+      rgb(217, 175, 217) 0%,
+      rgb(151, 217, 225) 150%
+    );
   }
 
   &::before {
@@ -124,16 +128,17 @@ export const RightDecoration = styled.div`
     width: 50px;
     height: 20px;
     border-radius: ${p => p.theme.spacing(8)};
-    background: white;
   }
 
   &::before {
     top: -20px;
     right: 0;
+    background-color: rgb(190, 231, 236);
   }
 
   &::after {
     top: 20px;
     right: 10px;
+    background-color: rgb(170, 224, 230);
   }
 `;

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-export const ButtonAddContact = styled.button`
+export const Link = styled(NavLink)`
   text-decoration: none;
-  display: inline-block;
   width: 100px;
   height: 40px;
-  border-radius: ${p => p.theme.spacing(5)};
-  font-family: inherit;
+  padding: ${p => p.theme.spacing(1)};
+  border-radius: ${p => p.theme.spacing(2)};
+  color: black;
   font-size: 11px;
   text-transform: uppercase;
   text-align: center;
@@ -16,19 +17,29 @@ export const ButtonAddContact = styled.button`
   background: transparent;
   box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
   transition: 0.5s;
-  cursor: pointer;
 
   &:hover,
   &:active,
   &:focus {
     color: white;
+    transform: translate(0, -3px);
+    box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
     background-image: linear-gradient(
       to right,
       #02aab0 0%,
       #00cdac 51%,
       #02aab0 100%
     );
-    border-color: ${p => p.theme.colors.accent};
-    box-shadow: 0 5px 15px 0 rgba(11, 99, 246, 1);
   }
+`;
+
+export const WrapperDesc = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${p => p.theme.spacing(4)};
+  align-items: center;
+`;
+
+export const Text = styled.p`
+  text-align: center;
 `;
