@@ -10,12 +10,12 @@ export const GlobalStyle = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(
+  background: linear-gradient(
     0deg,
     rgb(217, 175, 217) 0%,
     rgb(151, 217, 225) 50%,
     rgb(255, 255, 255) 100%
-  );
+  ) fixed;
   
   background-size: 100%;
 
