@@ -19,12 +19,7 @@ const ContactShema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email address')
     .required('This is a required field'),
-  password: Yup.string()
-    // .matches(
-    //   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/,
-    //   'Please create a stronger password'
-    // )
-    .required('This is a required field'),
+  password: Yup.string().required('This is a required field'),
 });
 
 export const LoginForm = () => {

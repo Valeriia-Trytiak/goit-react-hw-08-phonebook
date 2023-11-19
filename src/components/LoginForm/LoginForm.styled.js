@@ -56,7 +56,7 @@ export const ButtonSubmit = styled.button`
   &:hover {
     background-color: ${p => p.theme.colors.grey};
     box-shadow: 0 15px 20px rgba(0, 128, 128, 0.4);
-    color: white;
+    color: ${p => p.theme.colors.white};
     transform: translateY(-7px);
   }
 `;
@@ -125,7 +125,7 @@ export const RightDecoration = styled.div`
     width: 50px;
     height: 20px;
     border-radius: ${p => p.theme.spacing(8)};
-    background: white;
+    background: ${p => p.theme.colors.white};
   }
 
   &::before {

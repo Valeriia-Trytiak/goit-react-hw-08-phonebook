@@ -4,13 +4,20 @@ import { Helmet } from 'react-helmet';
 import { ContactList } from 'components/ContactList/ContactList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { fetchContacts } from 'redux/contacts/operations';
-import { selectContacts, selectIsLoading } from 'redux/contacts/selectors';
+import {
+  selectContacts,
+  selectIsLoading,
+  selectError,
+} from 'redux/contacts/selectors';
 import { Filter } from 'components/Filter/Filter';
+import { ContainerLoader } from 'components/ContainerLoader/ContainerLoader';
+import { ColorRing } from 'react-loader-spinner';
 
 export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const contacts = useSelector(selectContacts);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -22,14 +29,24 @@ export default function Contacts() {
         <title>Your contacts</title>
       </Helmet>
       <ContactForm />
-
+      {isLoading && (
+        <ContainerLoader>
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+          />
+        </ContainerLoader>
+      )}
       {contacts.length > 0 && (
         <>
           <Filter />
           <ContactList />
         </>
       )}
-      <div>{isLoading && 'Request in progress...'}</div>
+      {error && <span>Whoops... Error! Please, reload this page!</span>}
     </div>
   );
 }

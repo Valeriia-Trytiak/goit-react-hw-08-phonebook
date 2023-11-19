@@ -7,7 +7,7 @@ export const Link = styled(NavLink)`
   height: 40px;
   padding: ${p => p.theme.spacing(1)};
   border-radius: ${p => p.theme.spacing(2)};
-  color: black;
+  color: ${p => p.theme.colors.black};
   font-size: 11px;
   text-transform: uppercase;
   text-align: center;
@@ -21,7 +21,7 @@ export const Link = styled(NavLink)`
   &:hover,
   &:active,
   &:focus {
-    color: white;
+    color: ${p => p.theme.colors.white};
     transform: translate(0, -3px);
     box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
     background-image: linear-gradient(

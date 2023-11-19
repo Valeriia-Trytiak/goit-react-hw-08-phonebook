@@ -15,7 +15,9 @@ export const Contact = ({ id, name, number }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
-    setIsModalOpen(true);
+    if (!isModalOpen) {
+      setIsModalOpen(true);
+    }
   };
 
   const closeModal = () => {

@@ -56,7 +56,7 @@ export const ButtonSubmit = styled.button`
   &:hover {
     background-color: ${p => p.theme.colors.grey};
     box-shadow: 0 15px 20px rgba(0, 128, 128, 0.4);
-    color: white;
+    color: ${p => p.theme.colors.white};
     transform: translateY(-7px);
   }
 `;

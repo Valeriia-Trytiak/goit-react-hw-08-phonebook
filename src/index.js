@@ -16,6 +16,8 @@ const theme = {
     grey: '#9e9c9c',
     error: '#dc143c',
     bgInput: '#f9f0da',
+    black: '#000',
+    white: '#FFFFFF',
   },
   spacing: value => `${value * 4}px`,
 };

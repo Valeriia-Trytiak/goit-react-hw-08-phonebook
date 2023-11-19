@@ -63,7 +63,7 @@ export const AddContactButton = styled.button`
   &:hover,
   &:active,
   &:focus {
-    color: white;
+    color: ${p => p.theme.colors.white};
     transform: translate(0, -3px);
     box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
     background-image: linear-gradient(
@@ -83,6 +83,11 @@ export const UserIcon = styled(CiUser)`
   color: ${p => p.theme.colors.grey};
   z-index: 100;
 
+  @media (min-width: 532.9px) and (max-width: 767.9px) {
+    top: 10px;
+    left: 50px;
+  }
+
   @media only screen and (min-width: 768px) {
     top: 10px;
     left: 50px;
@@ -96,6 +101,11 @@ export const UserPhone = styled(CiPhone)`
   font-size: 20px;
   color: ${p => p.theme.colors.grey};
   z-index: 100;
+
+  @media (min-width: 532.9px) and (max-width: 767.9px) {
+    top: 68px;
+    left: 65px;
+  }
 
   @media only screen and (min-width: 768px) {
     top: 68px;

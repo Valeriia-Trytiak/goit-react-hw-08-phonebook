@@ -32,10 +32,16 @@ const ContactShema = Yup.object().shape({
     .min(9, 'Please enter at least 9 characters'),
 });
 
+Modal.setAppElement('#root');
+
 export const CustomModalForm = ({ isOpen, onClose, userId }) => {
   const dispatch = useDispatch();
-  const handleSubmit = (values, actions) => {
-    dispatch(updateContact(userId, values));
+  const handleSubmit = async (values, actions) => {
+    const newData = {
+      id: userId,
+      data: values,
+    };
+    dispatch(updateContact(newData));
     actions.resetForm({ name: '', number: '' });
     onClose();
   };

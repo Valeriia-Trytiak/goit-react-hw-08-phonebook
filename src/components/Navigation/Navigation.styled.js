@@ -5,12 +5,12 @@ export const Link = styled(NavLink)`
   padding: ${p => p.theme.spacing(2)} ${p => p.theme.spacing(4)};
   border-radius: ${p => p.theme.spacing(1)};
   text-decoration: none;
-  color: black;
+  color: ${p => p.theme.colors.black};
   font-weight: 500;
   transition: 0.5s;
 
   &.active {
-    color: white;
+    color: ${p => p.theme.colors.white};
     background-image: linear-gradient(
       to right,
       #02aab0 0%,
