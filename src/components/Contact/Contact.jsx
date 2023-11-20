@@ -10,14 +10,29 @@ import {
   UpdateContact,
 } from './Contact.styled';
 
+const customStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    zIndex: '1001',
+  },
+
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: '10002',
+  },
+};
+
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
-    if (!isModalOpen) {
-      setIsModalOpen(true);
-    }
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
@@ -40,6 +55,7 @@ export const Contact = ({ id, name, number }) => {
           isOpen={isModalOpen}
           onClose={closeModal}
           userId={id}
+          customStyles={customStyles}
         />
       )}
     </ContactItem>

@@ -34,7 +34,7 @@ const ContactShema = Yup.object().shape({
 
 Modal.setAppElement('#root');
 
-export const CustomModalForm = ({ isOpen, onClose, userId }) => {
+export const CustomModalForm = ({ isOpen, onClose, userId, customStyles }) => {
   const dispatch = useDispatch();
   const handleSubmit = async (values, actions) => {
     const newData = {
@@ -47,7 +47,12 @@ export const CustomModalForm = ({ isOpen, onClose, userId }) => {
   };
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={onClose} contentLabel="Modal Form">
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onClose}
+      style={customStyles}
+      contentLabel="Modal Form"
+    >
       <button onClick={onClose}>&times;</button>
       <h2>Please, enter new contact details:</h2>
       <Formik
