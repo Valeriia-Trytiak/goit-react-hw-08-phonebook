@@ -40,11 +40,13 @@ export default function Contacts() {
           />
         </ContainerLoader>
       )}
-      {contacts.length > 0 && (
+      {contacts.length ? (
         <>
           <Filter />
           <ContactList />
         </>
+      ) : (
+        <p>Phonebook is empty</p>
       )}
       {error && <span>Whoops... Error! Please, reload this page!</span>}
     </div>

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {
   StyledForm,
   Error,
@@ -39,9 +40,10 @@ export const ContactForm = () => {
       contact => contact.name.toLowerCase() === values.name.toLowerCase()
     );
     if (nameExists) {
-      alert(`${values.name} is already in contacts.`);
+      return Notify.failure(`${values.name} is already in contacts`);
     } else {
       dispatch(addContact(values));
+      Notify.success(`${values.name} added to contacts`);
       actions.resetForm({ name: '', number: '' });
     }
   };

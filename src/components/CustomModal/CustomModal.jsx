@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { updateContact } from 'redux/contacts/operations';
 import * as Yup from 'yup';
 import {
@@ -42,6 +43,7 @@ export const CustomModalForm = ({ isOpen, onClose, userId, customStyles }) => {
       data: values,
     };
     dispatch(updateContact(newData));
+    Notify.success(`Contact updated`);
     actions.resetForm({ name: '', number: '' });
     onClose();
   };

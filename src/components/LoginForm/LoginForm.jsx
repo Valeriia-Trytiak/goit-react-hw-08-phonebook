@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -27,6 +28,7 @@ export const LoginForm = () => {
   const handleSubmit = (values, actions) => {
     dispatch(logIn(values));
     actions.resetForm({ email: '', password: '' });
+    Notify.success(`Authorization completed`);
   };
   return (
     <Formik

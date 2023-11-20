@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import React, { useState } from 'react';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { CustomModalForm } from 'components/CustomModal/CustomModal';
 import { deleteContact } from 'redux/contacts/operations';
 import { MdDeleteForever, MdDriveFileRenameOutline } from 'react-icons/md';
@@ -39,12 +40,17 @@ export const Contact = ({ id, name, number }) => {
     setIsModalOpen(false);
   };
 
+  const handlerOnClick = id => {
+    dispatch(deleteContact(id));
+    Notify.success(`Contact deleted`);
+  };
+
   return (
     <ContactItem>
       <User>
         {name}: {number}
       </User>
-      <DeleteContact type="button" onClick={() => dispatch(deleteContact(id))}>
+      <DeleteContact type="button" onClick={() => handlerOnClick(id)}>
         <MdDeleteForever size={'24px'} />
       </DeleteContact>
       <UpdateContact type="button" onClick={openModal}>

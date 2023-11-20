@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -38,6 +39,7 @@ export const RegisterForm = () => {
 
   const handleSubmit = (values, actions) => {
     dispatch(register(values));
+    Notify.success(`${values.name} registered!`);
     actions.resetForm({ name: '', email: '', password: '' });
   };
 
