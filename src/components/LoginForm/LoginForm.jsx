@@ -38,7 +38,7 @@ export const LoginForm = () => {
       }}
       validationSchema={ContactShema}
     >
-      <StyledForm>
+      <StyledForm autoComplete="off">
         <LeftDecoration></LeftDecoration>
         <RightDecoration></RightDecoration>
         <Circle></Circle>
